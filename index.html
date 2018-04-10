@@ -2,10 +2,10 @@
 <html>
     <head>
         <title>Hákon Bragason</title>
-        <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
         <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
-           <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+           <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
         <script>
 		AFRAME.registerComponent('play-pause', {
 			init: function () {
@@ -23,6 +23,10 @@
 			}
 		});
 	</script>
+        
+                <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.js"></script>
+        <script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script>
+        
     </head>
     <body>
         <a-scene physics="gravity: -9.8; restitution: 0.7">
@@ -53,17 +57,13 @@
             </a-plane>
             
             
-            
-            <a-entity position="0 0 5">
-                <a-camera></a-camera>
-            </a-entity>
-            
-            
    
             <a-entity obj-model="obj: #eg-o; mtl: #eg-m"
                       position="2.131 3 10.378" rotation="0 50.99324376664327 0"
                       scale="1 1 1"
-                      shadow="cast: true" grabbable>
+                      shadow="cast: true" 
+                      grabbable
+                      >
             </a-entity>
          
             
@@ -75,7 +75,8 @@
                    roughness="0.3"
                    scale="10 0.1 25" 
                    position="-12.407 5 -0.029" rotation="0 0 90" 
-                   shadow="cast: true">
+                   shadow="cast: true"
+                   static-body>
             </a-box>
             <a-box color="#FFFFFF" 
                     src="#brick"
@@ -85,7 +86,8 @@
                    roughness="0.3"
                    scale="10 0.1 25" 
                    position="0.115 5 -12.566" rotation="0 90 90" 
-                   shadow="cast: true">
+                   shadow="cast: true"
+                   static-body>
             </a-box>
             <a-box color="#FFFFFF" 
                     src="#brick"
@@ -95,7 +97,8 @@
                    roughness="0.3"
                    scale="10 0.1 25" 
                   position="12.625 5 -0.026" rotation="0 0 90.01166961505233"
-                   shadow="cast: true">
+                   shadow="cast: true"
+                   static-body>
             </a-box>
             <a-box color="#FFFFFF" 
                     src="#brick"
@@ -105,7 +108,8 @@
                    roughness="0.3"
                    scale="25 0.1 25" 
                    position="0.116 10 -0.04" 
-                   shadow="cast:true">
+                   shadow="cast:true"
+                   static-body>
             </a-box>
             
            
@@ -167,11 +171,29 @@
             <a-entity position="-12.027 9.888 5.057" rotation="-69.901 0 0" light="angle:35;decay:0.35;intensity:0.85;penumbra:0.37;type:spot">
             </a-entity>
            
-        <!-- Progressive Controls -->
-        <a-entity progressive-controls position="0 0 5"></a-entity>
+        <!-- Progressive Controls
+        <a-entity progressive-controls position="0 1.6 5"></a-entity>  -->
+            
+           <!-- <a-entity position="0 0 0">
+    <a-camera position="0 1.6 0"></a-camera>
+</a-entity> -->
+        
 
-    
+            
+            
+           
+                <a-entity  camera look-controls 
+                          position="0 1.6 0"
+                          wasd-controls="fly: true;
+                easing: 15;
+                 acceleration: 80;">
+        <a-entity cursor="rayOrigin: mouse"></a-entity>
 
+           </a-entity>
+            
+            
+            
+            
         <!-- Red Box -->
         <a-box color="#AA0000" position="-3.5 0.5 -4">
             <a-box color="#AA0000" visible="false" scale="2 3 1.5" position="0 1 0" static-body>
@@ -180,11 +202,13 @@
         
         <!-- Green Sphere -->
         <a-sphere color="#00AA00" radius="0.5" position="-1 4 -4" grabbable dynamic-body="linearDamping: 0.5; mass:1">
+            
         </a-sphere>
         
         <!-- Yellow Sphere -->
         <a-sphere color="#FFAA00" radius="0.5" position="1 4 -4" grabbable
                   dynamic-body="linearDamping: 0.05; angularDamping: 0.3; mass:10">
+            
         </a-sphere>
         
         <!-- Blue Box -->
@@ -195,7 +219,7 @@
             </a-animation>
         </a-box>
             
-            <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -9">
+            <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -9" video-illumination="foo: bar">
         <a-image id="videoControls" src="#play" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause>
             </a-image>
         </a-video>
