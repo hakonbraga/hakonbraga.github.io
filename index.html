@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Hákon Bragason</title>
+        <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+           <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    </head>
+    <body>
+        <a-scene physics="gravity: -9.8; restitution: 0.7">
+            <a-assets>
+                <img id="sky" src="myndir/clear-sunny-sky.jpg">
+                <img id="floor" src="myndir/floor-1024.jpg">
+                <a-asset-item id="room" src="myndir/room.gltf"></a-asset-item>
+                <a-asset-item id="eg-o" src="myndir/eg3d3.obj"></a-asset-item>
+                <a-asset-item id="eg-m" src="myndir/eg3d3.mtl"></a-asset-item>
+            </a-assets>
+             
+            <a-sky src="#sky"></a-sky>
+            
+            <a-plane src="#floor"
+                     rotation="-90 0 0" scale="10000 10000 1" repeat="1000 1000" 
+                     shadow="receive: true" static-body>
+            </a-plane>
+            
+            
+            
+            <a-entity position="0 0 5">
+                <a-camera></a-camera>
+            </a-entity>
+            
+            
+   
+            <a-entity obj-model="obj: #eg-o; mtl: #eg-m"
+                      position="3 3 -2.49"
+                      rotation="0 0 0"
+                      scale="1 1 1"
+                      shadow="cast: true">
+            </a-entity>
+            
+            <a-entity gltf-model="#room" shadow="receive: true">
+            </a-entity>
+            
+            
+          
+            <a-box color="#E0E0E0" scale="5 0.1 1" position="0 4 0" shadow="cast: true">
+            </a-box>
+            
+           
+            <a-box color="#FFEB3B" scale="0.5 0.5 0.5" position="-1 1 0" shadow="cast: true" shader="flat">
+                <a-animation attribute="rotation"
+                             to="0 360 0"
+                             repeat="indefinite"
+                             dur="5000"
+                             easing="linear">
+                </a-animation>
+            </a-box>
+             
+            
+            <a-box id="orange-box"
+                   color="#FF5722" scale="0.5 0.5 0.5" position="1 1 0"
+                   shadow="cast: true">
+                <a-animation attribute="rotation"
+                             to="0 360 0"
+                             repeat="indefinite"
+                             dur="5000"
+                             easing="linear">
+                </a-animation>
+                 <a-animation attribute="position"
+                             to="1 1 -2"
+                             repeat="indefinite"
+                              direction="alternate"
+                             dur="5000">
+                </a-animation>
+            </a-box>
+            
+            <a-entity light="type: ambient;
+                             intensity: 0.3">
+            </a-entity>
+            <a-entity light="type: point;
+                             intensity:0.8;
+                             distance: 10;
+                             castShadow: true"
+                      position="0 2 1.5"> 
+                <a-animation attribute="light.intensity"
+                             from="0.8"
+                             to="0"
+                             repeat="indefinite"
+                             direction="alternate"
+                             dur="5000">
+                </a-animation>
+            </a-entity>
+            
+            <a-entity light="type: spot;
+                             target: #orange-box;
+                             color: #C40070;
+                             angle: 30;
+                             penumbra: 0.5;
+                             castShadow: true"
+                      position="0 3 1">
+            </a-entity>
+            
+            <a-entity position="2.394 4.685 -10.022"                        rotation="-37.127665124477346 0 0"                 light="penumbra:0.37;
+intensity:0.85;
+angle:35;
+decay:0.35;
+type:spot">
+            </a-entity>
+            
+            
+           
+        <!-- Progressive Controls -->
+        <a-entity progressive-controls position="0 0 5"></a-entity>
+
+    
+
+        <!-- Red Box -->
+        <a-box color="#AA0000" position="-3.5 0.5 -4">
+            <a-box color="#AA0000" visible="false" scale="2 3 1.5" position="0 1 0" static-body>
+            </a-box>
+        </a-box>
+        
+        <!-- Green Sphere -->
+        <a-sphere color="#00AA00" radius="0.5" position="-1 4 -4" grabbable dynamic-body="linearDamping: 0.5; mass:1">
+        </a-sphere>
+        
+        <!-- Yellow Sphere -->
+        <a-sphere color="#FFAA00" radius="0.5" position="1 4 -4" grabbable
+                  dynamic-body="linearDamping: 0.05; angularDamping: 0.3; mass:10">
+        </a-sphere>
+        
+        <!-- Blue Box -->
+        <a-box color="#00AAFF" position="3.5 2 -4" 
+               static-body="shape: sphere; sphereRadius: 1" 
+               event-set_color="_event: collide; material.color: #0055AA">
+            <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" dur="3000">
+            </a-animation>
+        </a-box>
+            
+        </a-scene>
+    </body>
+</html>
