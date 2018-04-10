@@ -6,22 +6,50 @@
         <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
         <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
            <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+        <script>
+		AFRAME.registerComponent('play-pause', {
+			init: function () {
+				var myVideo = document.querySelector('#hljodmynd');
+				var videoControls = document.querySelector('#videoControls');
+				this.el.addEventListener('click', function () {
+					if (myVideo.paused) {
+						myVideo.play();
+						videoControls.setAttribute('src', '#pause');
+					} else {
+						myVideo.pause();
+						videoControls.setAttribute('src', '#play');
+					}
+				});
+			}
+		});
+	</script>
     </head>
     <body>
         <a-scene physics="gravity: -9.8; restitution: 0.7">
             <a-assets>
-                <img id="sky" src="myndir/clear-sunny-sky.jpg">
-                <img id="floor" src="myndir/floor-1024.jpg">
+                <img id="sky" src="myndir/reykjavik-360.jpg">
                 <a-asset-item id="room" src="myndir/room.gltf"></a-asset-item>
                 <a-asset-item id="eg-o" src="myndir/eg3d3.obj"></a-asset-item>
                 <a-asset-item id="eg-m" src="myndir/eg3d3.mtl"></a-asset-item>
+                <img id="floorN" src="myndir/RiverStones-normal.tif">
+                <img id="floor" src="myndir/RiverStones-albedo.tif">
+                <img id="brick" src="myndir/IndustrialBricks-albedo.tif">
+                <img id="brickN" src="myndir/IndustrialBricks-normal.tif">
+                <img id="play" src="myndir/play.png">
+        	<img id="pause" src="myndir/pause.png">
+            <video id="hljodmynd" src="myndir/Sequence%2001_1.mp4" loop="true"></video>
             </a-assets>
              
             <a-sky src="#sky"></a-sky>
             
             <a-plane src="#floor"
-                     rotation="-90 0 0" scale="10000 10000 1" repeat="1000 1000" 
-                     shadow="receive: true" static-body>
+                     normal-map="#floorN"
+                   normal-texture-repeat="10 10"
+                   normal-scale="1 -1"
+                   roughness="0.4"
+                     rotation="-90 0 0" scale="30 30 1" repeat="10 10" 
+                     shadow="receive: true" 
+                     static-body>
             </a-plane>
             
             
@@ -33,18 +61,51 @@
             
    
             <a-entity obj-model="obj: #eg-o; mtl: #eg-m"
-                      position="3 3 -2.49"
-                      rotation="0 0 0"
+                      position="2.131 3 10.378" rotation="0 50.99324376664327 0"
                       scale="1 1 1"
-                      shadow="cast: true">
+                      shadow="cast: true" grabbable>
             </a-entity>
+         
             
-            <a-entity gltf-model="#room" shadow="receive: true">
-            </a-entity>
-            
-            
-          
-            <a-box color="#E0E0E0" scale="5 0.1 1" position="0 4 0" shadow="cast: true">
+            <a-box color="#FFFFFF" 
+                   src="#brick"
+                   normal-map="#brickN"
+                   normal-texture-repeat="10 10"
+                   normal-scale="1 -1"
+                   roughness="0.3"
+                   scale="10 0.1 25" 
+                   position="-12.407 5 -0.029" rotation="0 0 90" 
+                   shadow="cast: true">
+            </a-box>
+            <a-box color="#FFFFFF" 
+                    src="#brick"
+                   normal-map="#brickN"
+                   normal-texture-repeat="10 10"
+                   normal-scale="1 -1"
+                   roughness="0.3"
+                   scale="10 0.1 25" 
+                   position="0.115 5 -12.566" rotation="0 90 90" 
+                   shadow="cast: true">
+            </a-box>
+            <a-box color="#FFFFFF" 
+                    src="#brick"
+                   normal-map="#brickN"
+                   normal-texture-repeat="10 10"
+                   normal-scale="1 -1"
+                   roughness="0.3"
+                   scale="10 0.1 25" 
+                  position="12.625 5 -0.026" rotation="0 0 90.01166961505233"
+                   shadow="cast: true">
+            </a-box>
+            <a-box color="#FFFFFF" 
+                    src="#brick"
+                   normal-map="#brickN"
+                   normal-texture-repeat="10 10"
+                   normal-scale="1 -1"
+                   roughness="0.3"
+                   scale="25 0.1 25" 
+                   position="0.116 10 -0.04" 
+                   shadow="cast:true">
             </a-box>
             
            
@@ -76,7 +137,7 @@
             </a-box>
             
             <a-entity light="type: ambient;
-                             intensity: 0.3">
+                             intensity: 0.5">
             </a-entity>
             <a-entity light="type: point;
                              intensity:0.8;
@@ -101,14 +162,10 @@
                       position="0 3 1">
             </a-entity>
             
-            <a-entity position="2.394 4.685 -10.022"                        rotation="-37.127665124477346 0 0"                 light="penumbra:0.37;
-intensity:0.85;
-angle:35;
-decay:0.35;
-type:spot">
+           
+        
+            <a-entity position="-12.027 9.888 5.057" rotation="-69.901 0 0" light="angle:35;decay:0.35;intensity:0.85;penumbra:0.37;type:spot">
             </a-entity>
-            
-            
            
         <!-- Progressive Controls -->
         <a-entity progressive-controls position="0 0 5"></a-entity>
@@ -138,6 +195,12 @@ type:spot">
             </a-animation>
         </a-box>
             
+            <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -9">
+        <a-image id="videoControls" src="#play" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause>
+            </a-image>
+        </a-video>
+           
+          
         </a-scene>
     </body>
 </html>
