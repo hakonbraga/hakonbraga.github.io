@@ -43,7 +43,7 @@
                 <a-entity material=""></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:sound.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:index.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" visible="false"></a-entity></a-link>
         
 		<!-- Camera -->
-		<a-entity position="0 1.64 7">
+		<a-entity position="0 1.64 4">
 			<a-camera>
 				<a-cursor></a-cursor>
 			</a-camera>
@@ -52,7 +52,7 @@
         <!-- Ground -->
         <a-plane src="#ground" scale="10 10 1" repeat="2 2" rotation="-90 0 0">
         </a-plane>
-
+        <a-text value="CLICK ITEMS FOR SOUND" position="-3 2.5 2"></a-text>
         <!-- Blue Cylinder -->
         <a-cylinder color="#0088FF" height="5" position="-2 2.5 0"
                     sound="src: #bass;
