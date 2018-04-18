@@ -189,14 +189,11 @@
             </a-entity>
            
         <!--Progressive Controls -->
-        <a-entity camera progressive-controls position="0 1.6 10"
+        <a-entity camera look-controls progressive-controls position="0 1.6 10"
                   >
-            <a-entity obj-model="obj: #eg-o; mtl: #eg-m"
-                      scale="0.5 0.5 0.5"
-                      shadow="cast: true"
-                      position="0 0 -1"
-                      >
-            </a-entity>
+           <a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1"
+            material="color: gray; opacity: 0.5"></a-entity>
+           
             </a-entity>  
 
        <!--<a-entity position="0 0 0">
