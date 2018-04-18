@@ -22,14 +22,13 @@
         });
     </script>
     
-    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
-    <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v0.1.0/dist/aframe-altspace-component.min.js"></script>
+   
     
     
 </head>
 	
 <body>
-    <a-scene physics altspace="autoscale:true" canvas keyboard-shortcuts vr-mode-ui>
+    <a-scene>
         
         
         <!-- Asset Management System -->
@@ -50,16 +49,12 @@
                 <a-entity material=""></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:sound.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:index.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" visible="false"></a-entity></a-link>
         
 		<!-- Camera -->
-        <a-entity id="camera" camera="active:true" universal-controls="" kinematic-body="" position="0 1.64 4" velocity="0 0 0" gamepad-controls="" keyboard-controls="" touch-controls="" hmd-controls="" mouse-controls="" rotation="-1.375098708313982 -293.92734890211136 0">
- <a-entity id="cursor" cursor="fuse: true; maxDistance: 5; timeout: 1" geometry="primitive: sphere; radius: 1;" material="color: red; opacity: 1;" position="0 -10 0" rotation="0 0 90" raycaster=""></a-entity>
- </a-entity>
-        
-		<!--<a-entity position="0 1.64 4">
+        <a-entity position="0 1.64 4">
 			<a-camera>
 				<a-cursor></a-cursor>
 			</a-camera>
-		</a-entity> -->
-
+		</a-entity> 
+        
         <!-- Ground -->
         <a-plane static-body src="#ground" scale="10 10 1" repeat="2 2" rotation="-90 0 0">
         </a-plane>
