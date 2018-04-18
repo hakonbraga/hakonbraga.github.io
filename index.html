@@ -7,7 +7,7 @@
         <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
            <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
         <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
-            
+            <script>
 		AFRAME.registerComponent('play-pause', {
 			init: function () {
 				var myVideo = document.querySelector('#hljodmynd');
@@ -239,7 +239,12 @@
             </a-image>
         </a-video>
            
-   
+            
+            <a-scene>
+    <a-sphere mirror position="3 4 -4"></a-sphere>
+  </a-scene>
+            
+          
         </a-scene>
     </body>
 </html>
