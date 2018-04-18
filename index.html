@@ -127,7 +127,8 @@
             </a-box>
             
            
-            <a-box color="#FFEB3B" scale="0.5 0.5 0.5" position="-1 1 0" shadow="cast: true" shader="flat">
+            <a-box color="#FFEB3B" scale="0.5 0.5 0.5" position="-1 1 0" shadow="cast: true" shader="flat"
+                   grabbable>
                 <a-animation attribute="rotation"
                              to="0 360 0"
                              repeat="indefinite"
@@ -139,7 +140,8 @@
             
             <a-box id="orange-box"
                    color="#FF5722" scale="0.5 0.5 0.5" position="1 1 0"
-                   shadow="cast: true">
+                   shadow="cast: true"
+                   grabbable>
                 <a-animation attribute="rotation"
                              to="0 360 0"
                              repeat="indefinite"
@@ -202,12 +204,12 @@
            </a-entity>  -->
             
             
- </a-entity>
+ 
             
             
         <!-- Red Box -->
         <a-box color="#AA0000" position="-3.5 0.5 -4">
-            <a-box color="#AA0000" visible="false" scale="2 3 1.5" position="0 1 0" static-body>
+            <a-box color="#AA0000" visible="false" scale="2 3 1.5" position="0 1 0" static-body grabbable>
             </a-box>
         </a-box>
         
@@ -225,7 +227,8 @@
         <!-- Blue Box -->
         <a-box color="#00AAFF" position="3.5 2 -4" 
                static-body="shape: sphere; sphereRadius: 1" 
-               event-set_color="_event: collide; material.color: #0055AA">
+               event-set_color="_event: collide; material.color: #0055AA"
+               grabbable>
             <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" dur="3000">
             </a-animation>
         </a-box>
