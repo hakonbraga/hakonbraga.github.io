@@ -188,13 +188,18 @@
             <a-entity position="-12.027 9.888 5.057" rotation="-69.901 0 0" light="angle:35;decay:0.35;intensity:0.85;penumbra:0.37;type:spot">
             </a-entity>
            
-        <!--Progressive Controls -->
+        <!--Progressive Controls 
         <a-entity camera look-controls progressive-controls position="0 1.6 10"
                   >
-           <a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1"
-            material="color: gray; opacity: 0.5"></a-entity>
-           
-            </a-entity>  
+            </a-entity>-->
+            
+            <a-entity camera="active:true" universal-controls="movementControls: gamepad, keyboard" kinematic-body="" jump-ability="enableDoubleJump: true; distance: 3;" position="0 1.6 0" velocity="0 0 0" gamepad-controls="" keyboard-controls="" hmd-controls="" mouse-controls="" rotation="0 0 0">
+
+        <a-entity id="cursor" cursor="fuse: true; maxDistance: 1.5;" geometry="primitive: ring; radiusInner: 0.00; radiusOuter: 0.02" material="color: black" position="0 0 -2" constant-spawner="mixin: spawn; on: mousedown; off: mouseup" raycaster=""></a-entity>
+
+      
+    
+      </a-entity>
 
        <!--<a-entity position="0 0 0">
     <a-camera position="0 1.6 0"></a-camera>
