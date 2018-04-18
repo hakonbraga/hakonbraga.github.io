@@ -22,6 +22,7 @@
         });
     </script>
     
+     <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
    
     
     
@@ -39,7 +40,7 @@
             <audio id="pad1" src="myndir/106%20Pad%20Soundtrackish.wav">
             </audio>
             <img id="reykjavik" src="myndir/clear-sunny-sky.jpg">
-            <audio id="ambient" src="myndir/upp%C3%ADr%C3%BAmiamb%C3%ADent.wav"></audio>
+            <audio id="utopia" src="myndir/utopia2.mp3"></audio>
             <img id="home" src="myndir/screenshot-h%C3%A1kon%20bragason-1523459964097.png">
         </a-assets>
         
@@ -81,8 +82,9 @@
 			<!-- Stop -->
 			<a-sphere color="#AA0000" radius="0.25" position="0.5 1 0" stop></a-sphere>
         </a-box>
-        <a-sky src="#reykjavik"
-               sound="src: #ambient; autoplay: true; loop: true; positional: false">
+        <a-sky   mirror="repeat:true; resolution: 64; interval: 150ms;" 
+  
+        sound="src: #utopia; autoplay: true; loop: true; positional: false">
         </a-sky>
     </a-scene>
 </body>
