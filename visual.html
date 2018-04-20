@@ -33,7 +33,28 @@
         
     </head>
     <body>
-        <a-scene physics="gravity: -9.8; restitution: 0.7">
+        
+        <a-scene antialias="true" class="fullscreen" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="">
+      <a-assets>
+        <audio id="song" autoplay="true" loop="true" src="myndir/utopia2.mp3"></audio>
+        <img id="floor" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
+      </a-assets>
+
+      <a-entity id="analyser" audioanalyser="src: #song" audioanalyser-waveform="radius: 0.5" rotation="90 0 0" position="0 50 0" scale="" visible=""></a-entity>
+
+      <a-entity hand-controls="left" if-no-vr-headset="visible: false" position="" rotation="" scale="" visible="" vive-controls="" oculus-touch-controls="" blend-character-model=""></a-entity>
+      <a-entity hand-controls="right" if-no-vr-headset="visible: false" position="" rotation="" scale="" visible="" vive-controls="" oculus-touch-controls="" blend-character-model=""></a-entity>
+
+      <a-light type="ambient" color="#222" position="" rotation="" scale="" visible="" light=""></a-light>
+      <a-light audioanalyser-volume-bind="analyserEl: #analyser; component: light; property: intensity; max: 2.2; multiplier: .018" type="point" position="1 2 1" rotation="" scale="" visible="" light=""></a-light>
+      <a-light type="point" position="-2 2 1" rotation="" scale="" visible="" light=""></a-light>
+      <a-sky color="#111" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
+      <a-entity id="ground" geometry="primitive: circle; radius: 30" rotation="-90 0 0" material="src: #floor" position="" scale="" visible=""></a-entity>
+    <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="541" height="680" style="width: 541px; height: 680px;"></canvas><div class="a-enter-vr" aframe-injected=""><button class="a-enter-vr-button" aframe-injected=""></button></div><div class="a-orientation-modal a-hidden" aframe-injected=""><button aframe-injected="">Exit VR</button></div><a-entity position="" data-aframe-default-camera="" camera="" wasd-controls="" rotation="" look-controls="" aframe-injected="" scale="" visible=""></a-entity></a-scene>
+        
+        
+        
+    <!--    <a-scene physics="gravity: -9.8; restitution: 0.7">
             <a-assets>
                <audio id="song" autoplay="true" loop="true" src="myndir/utopia2.mp3"></audio>
             </a-assets>
@@ -58,6 +79,6 @@
             <a-sky color="#222" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
             <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="541" height="680" style="width: 541px; height: 680px;"></canvas>
             
-        </a-scene>
+        </a-scene> -->
     </body>
 </html>
