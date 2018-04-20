@@ -25,7 +25,7 @@
      <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
     <script src="https://unpkg.com/aframe-audioanalyser-component@^3.0.0/dist/aframe-audioanalyser-components.min.js"></script>
     
-    
+    <script src="https://unpkg.com/aframe-mountain-component@^0.3.2/aframe-mountain-component.min.js"></script>
 </head>
 	
 <body>
@@ -91,29 +91,7 @@
                >
         </a-sky>
         
-        <script>
-        				// Water
-				var waterGeometry = new THREE.PlaneBufferGeometry( 10000, 10000 );
-				water = new THREE.Water(
-					waterGeometry,
-					{
-						textureWidth: 512,
-						textureHeight: 512,
-						waterNormals: new THREE.TextureLoader().load( 'textures/waternormals.jpg', function ( texture ) {
-							texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-						}),
-						alpha: 1.0,
-						sunDirection: light.position.clone().normalize(),
-						sunColor: 0xffffff,
-						waterColor: 0x001e0f,
-						distortionScale:  3.7,
-						fog: scene.fog !== undefined
-					}
-				);
-				water.rotation.x = - Math.PI / 2;
-				scene.add( water );
-
-        </script>
+        <a-mountain mountain="" position="" rotation="" scale="" visible=""></a-mountain>
         
         <a-entity
       audio-analyser="#utopia" audioanalyser-waveform="radius: 0.5" rotation="90 0 0" position="0 50 0" scale="" visible=""></a-entity>
