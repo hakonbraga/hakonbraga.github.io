@@ -23,7 +23,7 @@
     </script>
     
      <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
-   <script src="https://rawgit.com/ngokevin/aframe-audio-visualizer-components/master/dist/aframe-audio-visualizer-components.min.js"></script> 
+    <script src="https://unpkg.com/aframe-audioanalyser-component@^3.0.0/dist/aframe-audioanalyser-components.min.js"></script>
     
     
 </head>
@@ -91,7 +91,10 @@
                sound="src:myndir/utopia2.mp3;autoplay:true;loop:true;positional:false" material="" geometry="radius:15">
         </a-sky>
         
-        <a-entity audio-visualizer="src: #pad1" audio-visualizer-kick></a-entity>
+        <a-entity
+      audio-analyser="#pad1" audioanalyser-waveform="radius: 0.5" rotation="90 0 0" position="0 50 0" scale="" visible=""></a-entity>
+      
+    
         
         
     </a-scene>
