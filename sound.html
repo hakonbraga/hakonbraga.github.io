@@ -23,7 +23,7 @@
     </script>
     
      <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
-   
+   <script src="https://rawgit.com/ngokevin/aframe-audio-visualizer-components/master/dist/aframe-audio-visualizer-components.min.js"></script> 
     
     
 </head>
@@ -87,9 +87,11 @@
         </a-box>
         <a-plane mirror="repeat:true;resolution:64;interval:150" position="0.10356931497002453 1.091 0.09020431481148528" rotation="0 92.15178574938479 0" scale="2 2 1" material="" geometry=""> </a-plane>
          
-        <a-sky metalness="100"
+        <a-sky src="#reykjavik"
                sound="src:myndir/utopia2.mp3;autoplay:true;loop:true;positional:false" material="" geometry="radius:15">
         </a-sky>
+        
+        <a-entity audio-visualizer="src: #pad1" audio-visualizer-kick></a-entity>
         
         
     </a-scene>
