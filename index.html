@@ -53,10 +53,10 @@
                 <a-entity material=""></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:sound.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
             
               <a-link href="visual.html" position="12.074 1.5 2.902" image="#soundM" rotation="0 90.01166961505233 0" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link=""
-                    title="Hljodheimur" color="#FFFFFF" highlighted="true" highlightedColor="#DDDDDD">
+                    title="annað" color="#FFFFFF" highlighted="true" highlightedColor="#DDDDDD">
                 <a-entity text=""></a-entity>
                 <a-entity material=""></a-entity>
-                <a-entity material=""></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:sound.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
+                <a-entity material=""></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:annað;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
             
           
             
@@ -131,36 +131,8 @@
                    position="0.116 10 -0.04" 
                    static-body>
             </a-box>
-            
-           
-            <a-box color="#FFEB3B" scale="0.5 0.5 0.5" position="-1 1 0" shadow="cast: true" shader="flat"
-                   grabbable>
-                <a-animation attribute="rotation"
-                             to="0 360 0"
-                             repeat="indefinite"
-                             dur="5000"
-                             easing="linear">
-                </a-animation>
-            </a-box>
              
-            
-            <a-box id="orange-box"
-                   color="#FF5722" scale="0.5 0.5 0.5" position="1 1 0"
-                   shadow="cast: true"
-                   grabbable>
-                <a-animation attribute="rotation"
-                             to="0 360 0"
-                             repeat="indefinite"
-                             dur="5000"
-                             easing="linear">
-                </a-animation>
-                 <a-animation attribute="position"
-                             to="1 1 -2"
-                             repeat="indefinite"
-                              direction="alternate"
-                             dur="5000">
-                </a-animation>
-            </a-box>
+        
             
             <a-entity light="type: ambient;
                              intensity: 0.5">
@@ -213,35 +185,7 @@
 
            </a-entity>  -->
             
-            
- 
-            
-            
-        <!-- Red Box -->
-        <a-box color="#AA0000" position="-3.5 0.5 -4">
-            <a-box color="#AA0000" visible="false" scale="2 3 1.5" position="0 1 0" static-body grabbable>
-            </a-box>
-        </a-box>
-        
-        <!-- Green Sphere -->
-        <a-sphere color="#00AA00" radius="0.5" position="-1 4 -4" grabbable dynamic-body="linearDamping: 0.5; mass:1">
-            
-        </a-sphere>
-        
-        <!-- Yellow Sphere -->
-        <a-sphere color="#FFAA00" radius="0.5" position="1 4 -4" grabbable
-                  dynamic-body="linearDamping: 0.05; angularDamping: 0.3; mass:10">
-            
-        </a-sphere>
-        
-        <!-- Blue Box -->
-        <a-box color="#00AAFF" position="3.5 2 -4" 
-               static-body="shape: sphere; sphereRadius: 1" 
-               event-set_color="_event: collide; material.color: #0055AA"
-               grabbable>
-            <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" dur="3000">
-            </a-animation>
-        </a-box>
+    
             
             <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -9" video-illumination="foo: bar">
         <a-image id="videoControls" src="#play" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause>
@@ -250,7 +194,7 @@
            
             
            
-    <a-sphere mirror="repeat:true; resolution: 124; interval: 150ms;" scale="2 2 2" position="-8.243 7.238 0.3921592871741053" grabbable></a-sphere>
+    <a-sphere mirror="repeat:true; resolution: 124; interval: 150ms;" scale="2 2 2" position="-8.243 7.238 0.3921592871741053" grabbable dynamic-body="linearDamping: 0.5; angularDamping: 0.5; mass:1"></a-sphere>
   
             
         
