@@ -61,14 +61,14 @@
           
          
             
-            <a-text value="WALK      LOOK AROUND" position="-1.417 0.706 5.977" rotation="-45 0 0" scale="1 1 2.01" text="value:WALK                  LOOK AROUND;side:double;opacity:0.6"></a-text>
+            <a-text value="WALK      LOOK AROUND" position="-1.417 0.706 9.6" rotation="-45 0 0" scale="1 1 2.01" text="value:WALK                  LOOK AROUND;side:double;opacity:0.6"></a-text>
             
           
             
-             <a-text value="   W                                       Click and hold" position="-1.215 0.5520879155955493 6.171841951036683" rotation="-45 0 0" scale="0.7 0.7 2.01" text="value:   W                                       Click and hold;side:double;opacity:0.6"></a-text>
+             <a-text value="   W                                       Click and hold" position="-1.215 0.5520879155955493 9.8" rotation="-45 0 0" scale="0.7 0.7 2.01" text="value:   W                                       Click and hold;side:double;opacity:0.6"></a-text>
             
            
-            <a-text value="A  S  D                                   Mouse button" position="-1.372 0.422 6.297" rotation="-45 0 0" scale="0.7 0.7 2.01" text="value:A  S  D                                   Mouse button;side:double;opacity:0.7"></a-text>
+            <a-text value="A  S  D                                   Mouse button" position="-1.372 0.422 9.9" rotation="-45 0 0" scale="0.7 0.7 2.01" text="value:A  S  D                                   Mouse button;side:double;opacity:0.7"></a-text>
             
             
             <a-sky src="#sky"></a-sky>
@@ -150,8 +150,6 @@
             </a-entity>
             
             <a-entity light="type:point;intensity:0.8;distance:10;castShadow:true;penumbra:0.06999999999999995;decay:0.77" position="-0.121 7.270955305242634 -8.43290576685358"> 
-                <a-animation attribute="light.intensity" from="0.8" to="0.4" repeat="indefinite" direction="alternate" dur="500">
-                </a-animation>
                  <a-animation attribute="position" from="-7.4 7 -8" to="7.4 7 -8" repeat="indefinite" direction="alternate" dur="5000">
                 </a-animation>
             </a-entity>
@@ -159,13 +157,15 @@
             
             
            <a-entity position="-10.961 9.888 7.061" rotation="-69.901 0 0" light="angle:35;decay:0.35;intensity:0.85;penumbra:0.37;type:spot">
+                <a-animation attribute="light.intensity" from="0.8" to="0.7" repeat="indefinite" direction="alternate" dur="200">
+                </a-animation>
             </a-entity>
         
            
            
         <!--Progressive Controls -->
         <a-entity progressive-controls 
-                  position="0 1.6 10"
+                  position="0 1.6 11"
                   jump-ability="enableDoubleJump: true;">
             </a-entity>
             
@@ -193,8 +193,7 @@
             
            
     <a-sphere mirror="repeat:true; resolution: 124; interval: 150ms;" scale="1 1 1" position="-8.243 7.238 3.2" geometry="radius:2" grabbable dynamic-body="linearDamping: 0.5; angularDamping: 0.5; mass:2"></a-sphere>
-             <a-sphere mirror="repeat:true; resolution: 124; interval: 150ms;" scale="1 1 1" position="-8.243 7.238 4.3" geometry="radius:1" grabbable dynamic-body="linearDamping: 0.5; angularDamping: 0.5; mass:2"></a-sphere>
-  <a-sphere mirror="repeat:true; resolution: 124; interval: 150ms;" scale="1 1 1" position="0 7.738 -7.7" geometry="radius:1" grabbable dynamic-body="linearDamping: 0.5; angularDamping: 0.5; mass:2"></a-sphere>
+             
         <a-sphere mirror="repeat:true; resolution: 124; interval: 150ms;" scale="1 1 1" position="10 5 -8.3" geometry="radius:1" grabbable dynamic-body="linearDamping: 0.5; angularDamping: 0.5; mass:2"></a-sphere>
         
         </a-scene>
