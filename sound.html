@@ -35,7 +35,8 @@
         <!-- Asset Management System -->
         <!-- DOWNLOAD, PRELOAD YOUR AUDIO FILES, AND UPDATE THEIR FILE NAMES IN THIS DOC -->
         <a-assets>
-        	<img id="ground" src="myndir/floor-1024.jpg">
+        	<img id="ground" src="myndir/OldWood_1024_albedo.jpg">
+            <img id="groundNO" src="myndir/OldWood_1024_normal.jpg">
             <audio id="bass" src="myndir/106%20Sequence%20Bassline.wav"></audio>
             <audio id="pad1" src="myndir/106%20Pad%20Soundtrackish.wav">
             </audio>
@@ -69,7 +70,13 @@
         
         
         <!-- Ground -->
-        <a-plane static-body src="#ground" scale="10 10 1" repeat="2 2" rotation="-90 0 0">
+        <a-plane static-body 
+                 src="#ground" 
+                  normal-map="#groundNO"
+                   normal-texture-repeat="10 10"
+                   normal-scale="1 -1"
+                   roughness="0.4"
+                 scale="20 20 1" repeat="2 2" rotation="-90 0 0">
         </a-plane>
         <a-text value="CLICK ITEMS FOR SOUND" position="-3 2.5 2"></a-text>
         
