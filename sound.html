@@ -49,16 +49,25 @@
                 <a-entity material=""></a-entity>
                 <a-entity material=""></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:sound.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:index.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;pano:[object HTMLImageElement];side:back" visible="false"></a-entity></a-link>
         
-		<!-- Camera -->
-        <a-entity position="0 1.64 4">
-			<a-camera>
-				<a-cursor></a-cursor>
-			</a-camera>
-		</a-entity> 
-       
-        <!-- <a-entity id="camera" camera="active:true" universal-controls="" kinematic-body="" position="-68.818286922367 8.39471798406664 6.325518972512888" velocity="0 0 0" gamepad-controls="" keyboard-controls="" touch-controls="" hmd-controls="" mouse-controls="" rotation="-1.375098708313982 -293.92734890211136 0">
- <a-entity id="cursor" cursor="fuse: true; maxDistance: 5; timeout: 1" geometry="primitive: sphere; radius: 1;" material="color: red; opacity: 1;" position="0 -10 0" rotation="0 0 90" raycaster=""></a-entity>
- </a-entity> -->
+<a-entity id="rig" 
+          movement-controls="controls: checkpoint" 
+          checkpoint-controls="mode:animate" position="-0.2861066736906483 0 3.6798604394704886" progressive-controls="" 
+          kinematic-body="">
+  <a-entity camera="active:true" 
+            position="0 1.6 10.5" 
+            look-controls="pointerLockEnabled:true" rotation="-15.584452027558406 -374.0268486614011 0" data-aframe-inspector-original-camera="" 
+            wasd-controls=""
+            jump-ability="">
+            &gt;<a-entity mixin="progressivecontrolsgazedefault"></a-entity></a-entity>
+<a-entity daydream-controls="hand:left" 
+          gearvr-controls="hand:left" 
+          oculus-touch-controls=""
+          vive-controls="" 
+          windows-motion-controls="hand:left"></a-entity>
+    <a-entity daydream-controls="hand:right" gearvr-controls="hand:right" oculus-touch-controls="hand:right" vive-controls="hand:right" windows-motion-controls=""></a-entity>
+        </a-entity>
+        
+        
         <!-- Ground -->
         <a-plane static-body src="#ground" scale="10 10 1" repeat="2 2" rotation="-90 0 0">
         </a-plane>
