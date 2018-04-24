@@ -182,12 +182,15 @@
 
            </a-entity>  -->
             
-    <a-entity id="rig" movement-controls kinematic-body>
+   <a-entity id="rig"
+          movement-controls="controls: checkpoint"
+          checkpoint-controls="mode: animate">
   <a-entity camera
-            position="0 1.6 14"
-            look-controls="pointerLockEnabled: true"
-            jump-ability="enableDoubleJump: true;"></a-entity>
+            position="0 1.6 0"
+            look-controls="pointerLockEnabled: true">
+            jump-ability="maxJumps: 2"></a-entity>
 </a-entity>
+            
             
             <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -9" video-illumination="foo: bar">
         <a-image id="videoControls" src="#play" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause>
