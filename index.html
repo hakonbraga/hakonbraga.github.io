@@ -71,15 +71,17 @@
             
             <a-sky src="#sky"></a-sky>
             
-            <a-plane src="#floor"
+            <a-box src="#floor"
                      normal-map="#floorN"
                    normal-texture-repeat="10 10"
                    normal-scale="1 -1"
                    roughness="0.4"
+                   scale="10 0.1 25"
+                   position="0 0 0"
                      rotation="-90 0 0" scale="30 30 1" repeat="10 10" 
                      shadow="receive: true" 
                      static-body>
-            </a-plane>
+            </a-box>
             
             
    
@@ -182,8 +184,9 @@
             
     <a-entity id="rig" movement-controls kinematic-body>
   <a-entity camera
-            position="0 1.6 0"
-            look-controls="pointerLockEnabled: true"></a-entity>
+            position="0 1.6 14"
+            look-controls="pointerLockEnabled: true"
+            jump-ability="enableDoubleJump: true;"></a-entity>
 </a-entity>
             
             <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -9" video-illumination="foo: bar">
