@@ -7,23 +7,7 @@
         <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
            <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
         <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
-            <script>
-		AFRAME.registerComponent('play-pause', {
-			init: function () {
-				var myVideo = document.querySelector('#hljodmynd');
-				var videoControls = document.querySelector('#videoControls');
-				this.el.addEventListener('click', function () {
-					if (myVideo.paused) {
-						myVideo.play();
-						videoControls.setAttribute('src', '#pause');
-					} else {
-						myVideo.pause();
-						videoControls.setAttribute('src', '#play');
-					}
-				});
-			}
-		});
-	</script>
+            
         
                 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.js"></script>
         <script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script>
@@ -40,9 +24,7 @@
                 <img id="floor" src="myndir/RiverStones-albedo.jpg">
                 <img id="brick" src="myndir/IndustrialBricks-albedo.jpg">
                 <img id="brickN" src="myndir/IndustrialBricks-normal.jpg">
-                <img id="play" src="myndir/play.png">
-        	<img id="pause" src="myndir/pause.png">
-            <video id="hljodmynd" src="myndir/Sequence%2001_1.mp4" loop="true"></video>
+                
                 <img id="soundM" src="myndir/screenshot-sound%20and%20positionsal%20audio-1523460004593.png">
             </a-assets>
              
@@ -174,10 +156,7 @@
           gearvr-controls="hand:left" oculus-touch-controls="" vive-controls="" windows-motion-controls="hand:left"></a-entity><a-entity daydream-controls="hand:right" gearvr-controls="hand:right" oculus-touch-controls="hand:right" vive-controls="hand:right" windows-motion-controls=""></a-entity></a-entity>
             
             
-            <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -9" video-illumination="foo: bar">
-        <a-image id="videoControls" src="#play" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause>
-            </a-image>
-        </a-video>
+           
            
             
            
