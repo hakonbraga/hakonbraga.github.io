@@ -27,7 +27,7 @@
 </head>
 	
 <body>
-    <a-scene>
+    <a-scene physics="gravity: -9.8; restitution: 0.7">
         
         
         <!-- Asset Management System -->
@@ -52,6 +52,7 @@
                    colliderEndEvent:raycaster-intersection-cleared;
                    colliderEndEventProperty:el;">
   </a-mixin>
+            <a-asset-item id="vatnsm" src="myndir/Watermelon2_1024_albedo.jpg"></a-asset-item>
         </a-assets>
         
         <a-link href="index.html" position="0.143 1.5 13.9" image="#home" geometry="primitive:circle;segments:64" material="shader:portal;side:double;pano:https://hakonbraga.github.io/myndir/screenshot-h%C3%A1kon%20bragason-1523459964097.png;backgroundColor:#24CAFF;strokeColor:#24CAFF" link="highlighted:true;backgroundColor:DDDDDD;title:Home;titleColor:black">
@@ -120,6 +121,14 @@
             </a-image>
         </a-video>
         
+         <a-entity obj-model="obj: #vatnsm;"
+                      position="2.131 3 7.8" rotation="0 50.99324376664327 0"
+                      scale="1 1 1"
+                      shadow="cast: true" 
+                      grabbable
+                      mesh-smooth=""
+                      >
+            </a-entity>
     
         
         
