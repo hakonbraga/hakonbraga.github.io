@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Hákon Bragason</title>
+        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+           <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+        <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
+        
+                <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.js"></script>
+        <script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script>
+        
+            <script src="https://unpkg.com/aframe-audioanalyser-component@^3.0.0/dist/aframe-audioanalyser-components.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+        
+    </head>
+    <body>
+        
+        <a-scene>
+            
+      <a-assets>
+        
+          <img id="home" src="myndir/screenshot-h%C3%A1kon%20bragason-1523459964097.png">
+          
+          
+          <video id="wd40" src="https://ucarecdn.com/dc58adfa-2257-423f-b649-ed2f95a8bca7/" loop="true"></video>
+      </a-assets>
+            
+             <a-entity id="rig" 
+                      movement-controls="controls: checkpoint" checkpoint-controls="mode:animate" position="-0.2861066736906483 0 3.6798604394704886" 
+                      progressive-controls="" >
+            <a-entity camera="active:true" 
+            position="0.185 1.6 10.5" look-controls="pointerLockEnabled:true" rotation="-15.584452027558406 -374.0268486614011 0" data-aframe-inspector-original-camera="" 
+            wasd-controls="" 
+            jump-ability="">
+            &gt;<a-entity mixin="progressivecontrolsgazedefault"></a-entity></a-entity>
+            <a-entity daydream-controls="hand:left" 
+          gearvr-controls="hand:left" oculus-touch-controls="" vive-controls="" windows-motion-controls="hand:left"></a-entity><a-entity daydream-controls="hand:right" gearvr-controls="hand:right" oculus-touch-controls="hand:right" vive-controls="hand:right" windows-motion-controls=""></a-entity></a-entity>
+          
+            
+            <a-videosphere rotation="0 180 0" src="#wd40" play-on-window-click="" play-on-vrdisplayactivate-or-enter-vr="" position="" scale="" visible="" material="" geometry="">
+      </a-videosphere>
+        
+    </a-scene>
+    </body>
+</html>
