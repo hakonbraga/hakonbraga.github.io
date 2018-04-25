@@ -32,10 +32,10 @@
 				this.el.addEventListener('click2', function () {
 					if (myVideo.paused) {
 						myVideo.play();
-						videoControls.setAttribute('src', '#pause2');
+						videoControls.setAttribute('src', '#pause');
 					} else {
 						myVideo.pause();
-						videoControls.setAttribute('src', '#play2');
+						videoControls.setAttribute('src', '#play');
 					}
 				});
 			}
@@ -127,6 +127,9 @@
         <a-entity position="0 5 0.133" light="type:point;decay:0.65;distance:20;intensity:1.55;color:#f4f0d4"></a-entity>
         <a-entity light="type:ambient;intensity:0.2"></a-entity>
         
+        <a-entity position="-0.927 6.225 -8.285" rotation="-37.87251025814742 -7.784123074668777 0" light="type:spot;intensity:1.4500000000000002;decay:4.739999999999999;penumbra:0.49"></a-entity>
+        <a-entity position="8.4554653284471 6.225 -3.964370127706456" rotation="-37.87251025814742 -52.556966430712784 0" light="type:spot;intensity:1.4500000000000002;decay:4.739999999999999;penumbra:0.49"></a-entity>
+        
         <a-box mirror="repeat:true;resolution:124;interval:150" position="0.119 2.7 13.220463714947936" rotation="3.552338329811104 -179.96604345059157 -0.057295779513082325" scale="10 5 1" material="" geometry=""> </a-box>
        
         
@@ -148,7 +151,7 @@
                       >
             </a-entity>
         
-    <a-video src="#cuerpo" width="8" height="4.5" position="11.49 3 -7.128" rotation="0 -59.99999999999999 0" video-illumination="foo: bar"> <a-image id="videoControls2" src="#play2" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause2> </a-image>
+    <a-video src="#cuerpo" width="8" height="4.5" position="11.49 3 -7.128" rotation="0 -59.99999999999999 0" video-illumination="foo: bar"> <a-image id="videoControls2" src="#play" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause2> </a-image>
         </a-video>
       
     </a-scene>
