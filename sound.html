@@ -24,6 +24,23 @@
 			}
 		});
 	</script>
+    <script>
+		AFRAME.registerComponent('play-pause', {
+			init: function () {
+				var myVideo = document.querySelector('#cuerpo');
+				var videoControls = document.querySelector('#videoControls2');
+				this.el.addEventListener('click', function () {
+					if (myVideo.paused) {
+						myVideo.play();
+						videoControls.setAttribute('src', '#pause');
+					} else {
+						myVideo.pause();
+						videoControls.setAttribute('src', '#play');
+					}
+				});
+			}
+		});
+	</script>
 </head>
 	
 <body>
@@ -43,7 +60,8 @@
             <img id="home" src="myndir/screenshot-h%C3%A1kon%20bragason-1523459964097.png">
             <img id="play" src="myndir/play.png">
         	<img id="pause" src="myndir/pause.png">
-            <video id="hljodmynd" src="myndir/Sequence%2001_1.mp4" loop="true"></video>
+            <video id="hljodmynd" src="myndir/Sequence%2001_1.mp4" loop="false"></video>
+            <video id="cuerpo" src="https://ucarecdn.com/dc58adfa-2257-423f-b649-ed2f95a8bca7/" loop="false"></video>
              <a-mixin id="progressivecontrolsgazedefault" position="0 0 -0.5" raycaster
       geometry="primitive: ring;radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32"
       material="color: #808080; shader: flat"
@@ -129,7 +147,7 @@
                       >
             </a-entity>
         
-    <a-video src="https://ucarecdn.com/dc58adfa-2257-423f-b649-ed2f95a8bca7/" width="8" height="4.5" position="11.49 3 -7.128" rotation="0 -59.99999999999999 0" material="" geometry=""> 
+    <a-video src="cuerpo" width="8" height="4.5" position="11.49 3 -7.128" rotation="0 -59.99999999999999 0" video-illumination="foo: bar"> <a-image id="videoControls2" src="#play" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause> </a-image>
         </a-video>
       
     </a-scene>
