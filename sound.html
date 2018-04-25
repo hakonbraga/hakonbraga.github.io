@@ -6,7 +6,7 @@
    <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
      <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
            <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
-    
+     <script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script>
     <script>
 		AFRAME.registerComponent('play-pause', {
 			init: function () {
@@ -105,7 +105,7 @@
         
         
         
-        <a-entity position="0 2.8399935767268643 0.133" light="type:point;decay:0.65;distance:20;intensity:1.55"></a-entity>
+        <a-entity position="0 5 0.133" light="type:point;decay:0.65;distance:20;intensity:1.55;color:#f4f0d4"></a-entity>
         
         
         <a-plane mirror="repeat:true;resolution:124;interval:150" position="0.119 4.789 14.785090238567328" rotation="0 178.70553630130377 0" scale="10 5 2" material="" geometry=""> </a-plane>
@@ -115,7 +115,7 @@
                >
         </a-sky>
         
-         <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -8" video-illumination="foo: bar">
+         <a-video src="#hljodmynd" width="8" height="4.5" position="0 3 -13.5" video-illumination="foo: bar">
         <a-image id="videoControls" src="#play" position="0.384 -2.531 0.429" scale="0.5 0.5 1" play-pause>
             </a-image>
         </a-video>
