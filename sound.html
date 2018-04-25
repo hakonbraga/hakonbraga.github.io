@@ -29,7 +29,7 @@
 			init: function () {
 				var myVideo = document.querySelector('#cuerpo');
 				var videoControls = document.querySelector('#videoControls2');
-				this.el.addEventListener('click2', function () {
+				this.el.addEventListener('click', function () {
 					if (myVideo.paused) {
 						myVideo.play();
 						videoControls.setAttribute('src', '#pause');
@@ -102,8 +102,8 @@
                  src="#ground" 
                   normal-map="#groundNO"
                    normal-texture-repeat="10 10"
-                   normal-scale="1 1"
-                   roughness="1"
+                   normal-scale="1 -1"
+                   roughness="0.9"
                  scale="40 40 1" repeat="2 2" rotation="-90 0 0">
         </a-plane>
        
