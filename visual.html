@@ -18,10 +18,25 @@
     <body>
         
         <a-scene>
+            
       <a-assets>
         <audio id="song" autoplay="true" loop="true" src="myndir/utopia2.mp3"></audio>
         <img id="floor" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
+          <img id="home" src="myndir/screenshot-h%C3%A1kon%20bragason-1523459964097.png">
       </a-assets>
+            
+            
+            <a-link href="video.html" position="11.876626231106897 1.5 -1" image="#soundM" rotation="0 90.01166961505233 0" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link=""
+                    title="VIDEO" color="#FFFFFF" highlighted="true" highlightedColor="#DDDDDD">
+                <a-entity text=""></a-entity>
+                <a-entity material=""></a-entity>
+                <a-entity material=""></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:sound.html;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
+            
+              <a-link href="index.html" position="12.074 1.5 2.902" image="#home" rotation="0 90.01166961505233 0" geometry="primitive:circle;segments:64" material="shader:portal;side:double" link=""
+                    title="HOME" color="#FFFFFF" highlighted="true" highlightedColor="#DDDDDD">
+                <a-entity text=""></a-entity>
+                <a-entity material=""></a-entity>
+                <a-entity material=""></a-entity><a-entity text="color:white;align:center;font:kelsonsans;value:annað;width:5" position="0 1.5 0"></a-entity><a-entity geometry="primitive:sphere;segmentsWidth:64;segmentsHeight:64;phiLength:180;thetaLength:360" material="shader:portal;borderEnabled:0;side:back" rotation="0 180 0" visible="false"></a-entity><a-entity geometry="primitive:sphere;radius:10;segmentsWidth:64;segmentsHeight:64" material="shader:portal;borderEnabled:0;side:back" visible="false"></a-entity></a-link>
 
       <a-entity environment="preset: yavapai; groundColor: #445; grid: none; ground: canyon; fog: 0.2; dressing: trees"></a-entity>
         
